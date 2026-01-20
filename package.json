@@ -1,0 +1,17 @@
+{
+  "name": "task_from_email",
+  "version": "1.0.0",
+  "description": "Cloudflare Email Worker for Notion Inbox routing",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "postal-mime": "^2.1.2"
+  }
+}
