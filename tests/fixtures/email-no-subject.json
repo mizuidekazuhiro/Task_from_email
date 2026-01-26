@@ -1,0 +1,7 @@
+{
+  "text": "",
+  "html": "<p>Fallback only HTML body.</p>",
+  "from": "Bob <bob@example.com>",
+  "to": "Inbox <inbox@example.com>",
+  "date": "2024-02-03T04:05:06.000Z"
+}
