@@ -156,16 +156,6 @@ async function handleNotionCreate(input: {
   const { env, requestId, receivedAt, mail, resolved } = input;
   const subject = mail.subject ?? "";
 
-  if (!/inbox/i.test(subject)) {
-    logInfo("email.skipped_subject", {
-      requestId,
-      subjectPresent: Boolean(subject),
-      subjectLength: subject.length,
-      subjectHash: subject ? await sha256Hex(subject) : null,
-    });
-    return;
-  }
-
   const fromAddress = extractFromAddress(mail.from) ?? input.messageFrom ?? null;
   const allowlist = parseAllowlist(env.ALLOWED_FROM);
   if (allowlist && (!fromAddress || !allowlist.has(fromAddress.toLowerCase()))) {

@@ -1,6 +1,6 @@
 # Cloudflare Email → Notion Inbox Worker
 
-Cloudflare Email Routing で受信したメールを Cloudflare Workers の Email Worker で処理し、件名に **INBOX** が含まれるものだけ Notion の Inbox DB に追加します。
+Cloudflare Email Routing で受信したメールを Cloudflare Workers の Email Worker で処理し、すべて Notion の Inbox DB に追加します。
 
 ## セットアップ
 
@@ -54,8 +54,8 @@ npm run dev
 
 ## 動作仕様
 
-- 件名に **INBOX**（大文字小文字無視）が含まれるメールのみ Notion Inbox DB に追加します。
-- Name には `INBOX` / `[INBOX]` / `INBOX:` / `INBOX -` などのプレフィックスを除去した件名を保存します。
+- 受信したメールはすべて Notion Inbox DB に追加します。
+- Name には `INBOX` / `[INBOX]` / `INBOX:` / `INBOX -` などのプレフィックスが含まれる場合は除去して保存します。
 - Source は常に `Email` を設定します（デフォルトは `select` 型、必要なら `SOURCE_AS_RICH_TEXT=true`）。
 - Created は登録時刻（ISO 文字列）を設定します。
 - Raw には本文先頭 1800 文字までを保存し、ページ本文（children）には全文を複数 paragraph に分割して保存します。
