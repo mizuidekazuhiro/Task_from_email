@@ -1,0 +1,8 @@
+{
+  "subject": "INBOX: Hello from unit test",
+  "text": "This is a plain text body for the Notion inbox worker.",
+  "html": "<p>This is <strong>HTML</strong> content.</p>",
+  "from": "Alice <alice@example.com>",
+  "to": "Inbox <inbox@example.com>",
+  "date": "2024-01-02T03:04:05.000Z"
+}
